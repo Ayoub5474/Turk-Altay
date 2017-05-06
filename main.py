@@ -9,7 +9,7 @@ Türk-Altay Linux Sürümü (v1.0)
 
 __projectAuthor = "Keylo99"
 __PyAuthor__    = "Black Viking"
-__date__        = "16.04.2017"
+__date__        = "06.05.2017"
 
 
 import os
