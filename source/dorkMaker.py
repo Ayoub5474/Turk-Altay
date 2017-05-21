@@ -15,21 +15,34 @@ Usage:
 __author__ = "Black Viking"
 __date__   = "16.04.2017"
 
-
-import urllib2
-import random
+import re
 import sys
+import random
+import requests
 
-wordPressDorks = ['("Just another WordPress site")', '("Comment on Hello world!")', '("Mr WordPress on Hello world!")', '("uncategorized")', '("author/admin")', '("Comentarios en Hello world!")']
-wordsSite      = "http://dpaste.com/1RGD1MK.txt"
-words 		   = urllib2.urlopen(wordsSite).read().split("\n")
+
+wordPressDorks = [
+					'("Just another WordPress site")', 
+					'("Comment on Hello world!")', 
+					'("Mr WordPress on Hello world!")', 
+					'("uncategorized")', 
+					'("author/admin")'
+				]
+
+wordsSite      = "https://randomword.com/"
 dorks  		   = []
 
+headers = {
+	'User-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+}
 
 def getRandomWord():
 	''' Get random words '''
 
-	return random.choice(words)
+	req  = requests.get(url=wordsSite, headers=headers)
+	word = re.findall('<div id="random_word">(.*?)</div>', req.text)[0]
+
+	return word
 
 def generateDork(x):
 	''' Generate Dorks'''
