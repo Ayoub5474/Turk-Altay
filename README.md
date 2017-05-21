@@ -44,3 +44,14 @@ New features coming soon :D
 ![alt tag](https://i.hizliresim.com/LyVj50.jpg)
 ![alt tag](https://i.hizliresim.com/r3lGza.jpg)
 ![alt tag](https://i.hizliresim.com/7q0j3L.jpg)
+
+
+
+
+
+
+
+
+<p align="center">
+  <img src="https://i.hizliresim.com/yE7X2a.jpg" alt="Turk-Altay"/>
+</p>
