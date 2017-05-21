@@ -1,5 +1,6 @@
 # Turk-Altay
 Automated WordPress Brute Force(with dork maker and dork scanner) and SQLi Scanner Tool
+
 New features coming soon :D
 
 # Installation
