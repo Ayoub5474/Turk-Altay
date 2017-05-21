@@ -22,15 +22,15 @@ import requests
 
 
 wordPressDorks = [
-					'("Just another WordPress site")', 
-					'("Comment on Hello world!")', 
-					'("Mr WordPress on Hello world!")', 
-					'("uncategorized")', 
-					'("author/admin")'
+	'("Just another WordPress site")', 
+	'("Comment on Hello world!")', 
+	'("Mr WordPress on Hello world!")', 
+	'("uncategorized")', 
+	'("author/admin")'
 				]
 
-wordsSite      = "https://randomword.com/"
-dorks  		   = []
+wordsSite = "https://randomword.com/"
+dorks     = []
 
 headers = {
 	'User-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
