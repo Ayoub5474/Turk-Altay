@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="http://fs5.directupload.net/images/160227/on9ldv3g.png" alt="Turk-Altay"/>
+</p>
+
+
 # Turk-Altay
 Automated WordPress Brute Force(with dork maker and dork scanner) and SQLi Scanner Tool
 
