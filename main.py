@@ -3,17 +3,13 @@
 #
 #
 
-"""
-Wordpress brute force tool with dork maker and dork scanner.
-"""
-
 __author__ = "Black Viking"
 __date__   = "16.04.2017"
 
 try:
 	__version__ = open("version.txt", "r").read()
 except:
-	__version__ = "1.0.0"
+	__version__ = "1.5.0"
 
 import os
 import sys
