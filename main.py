@@ -3,13 +3,17 @@
 #
 #
 
+"""
+Wordpress brute force tool with dork maker and dork scanner.
+"""
+
 __author__ = "Black Viking"
 __date__   = "16.04.2017"
 
 try:
-	__version__ = open("version.txt", "r").read()+"\n"
+	__version__ = open("version.txt", "r").read()
 except:
-	__version__ = "1.0.0\n"
+	__version__ = "1.0.0"
 
 import os
 import sys
@@ -43,8 +47,8 @@ sqliErrors = {
 			}
 
 def versionControl(version):
-	control = urllib2.urlopen("https://raw.githubusercontent.com/blackvkng/Turk-Altay/master/version.txt").read()
-	
+	control = urllib2.urlopen("https://raw.githubusercontent.com/blackvkng/Turk-Altay/master/version.txt").read().strip()
+
 	if control != version:
 		print yellow + bright + "\n[*] New version available, please update! %s ==> %s"%(version, control)
 
