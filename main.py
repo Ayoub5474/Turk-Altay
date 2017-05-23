@@ -3,12 +3,13 @@
 #
 #
 
-"""
-Wordpress brute force tool with dork maker and dork scanner.
-"""
-
 __author__ = "Black Viking"
 __date__   = "16.04.2017"
+
+try:
+	__version__ = open("version.txt", "r").read()+"\n"
+except:
+	__version__ = "1.0.0\n"
 
 import os
 import sys
@@ -40,6 +41,13 @@ sqliErrors = {
 			 "mysql_fetch": 'MySQL fetch',
 			 "Syntax error": 'Syntax error'
 			}
+
+def versionControl(version):
+	control = urllib2.urlopen("https://raw.githubusercontent.com/blackvkng/Turk-Altay/master/version.txt").read()
+	
+	if control != version:
+		print yellow + bright + "\n[*] New version available, please update! %s ==> %s"%(version, control)
+
 
 def logo():
 	print bright + red + """
@@ -101,8 +109,14 @@ def main():
 			clear()
 
 		elif "sqli scan" in altay:
-			dork = altay.split(" ")[-2]
-			num  = altay.split(" ")[-1]
+			altay = altay.split(" ")
+
+			if len(altay) < 4:
+				print yellow + bright + "[-] Example usage: sqli scan DORK NUM"
+				main()
+
+			dork = ' '.join(altay[2:-1])
+			num  = altay[-1]
 
 			sqliSites = []
 
@@ -123,8 +137,9 @@ def main():
 
 						for err in sqliErrors:
 							if err in source:
-								sqliSites.append(url)
-								print "- %s%s %s--> %s%s"%(bright + blue, url, red, yellow, sqliErrors[err])
+								if url not in sqliSites:
+									sqliSites.append(url)
+									print "- %s%s %s--> %s%s"%(bright + blue, url, red, yellow, sqliErrors[err])
 					except Exception as e:
 						#print bright + red + "Error: ", e
 						pass
@@ -232,4 +247,5 @@ def main():
 if __name__ == "__main__":
 	init(autoreset=True)
 	logo()
+	versionControl(__version__)
 	main()
