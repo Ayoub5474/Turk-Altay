@@ -17,6 +17,7 @@ __date__   = "16.04.2017"
 
 import re
 import sys
+import ragent
 import random
 import requests
 
@@ -32,20 +33,19 @@ wordPressDorks = [
 wordsSite = "https://randomword.com/"
 dorks     = []
 
-headers = {
-	'User-agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
-}
-
 def getRandomWord():
 	''' Get random words '''
 
-	req  = requests.get(url=wordsSite, headers=headers)
+	header = {'User-agent': ragent.ua()}
+
+	req  = requests.get(url=wordsSite, headers=header)
 	word = re.findall('<div id="random_word">(.*?)</div>', req.text)[0]
 
 	return word
 
 def generateDork(x):
 	''' Generate Dorks'''
+
 	for i in range(1, int(x)+1):
 		dork = random.choice(wordPressDorks) + getRandomWord()
 		dorks.append(dork)
