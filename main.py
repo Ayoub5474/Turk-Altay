@@ -7,7 +7,7 @@ __author__ = "Black Viking"
 __date__   = "16.04.2017"
 
 try:
-	__version__ = open("version.txt", "r").read()
+	__version__ = open("version.txt", "r").read().strip()
 except:
 	__version__ = "1.5.0"
 
@@ -58,9 +58,9 @@ ___________            __                _____  .__   __
   |____| |____/ |__|  |__|_ \         \____|__  /____/__| (____  / ____|
                            \/                 \/               \/\/     
 
-\t\t\t\t\t%sVersion 1.0.0
+\t\t\t\t\t%sVersion %s
 \t\t\t\t\tBlack Viking - Keylo99
-\t\t\t\t\thttp://github.com/blackvkng"""%(cyan)
+\t\t\t\t\thttp://github.com/blackvkng"""%(cyan, __version__)
 
 def help():
 	help = bright + blue + """
