@@ -1,3 +1,2 @@
-google
 requests
 colorama
