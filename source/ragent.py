@@ -90,60 +90,10 @@ maclist = ['Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3) G
 # Taslaklar
 ualist = {"mac": maclist, "win": winlist, "lin": linlist}
 stage = ["mac", "win", "lin"]
-proxyliste = []
 update = 0
 
-# Fonksiyonlar
-def logo():
-    system("clear")
-    print "--==["+bold+blue+"nickname"+endcolor+"] [ ExitStars"
-    print "--==["+bold+yellow+"MyGitHub"+endcolor+"] [ http://github.com/ExitStars"
-    print "--==["+bold+green+"software"+endcolor+"] [ http://github.com/ExitStars/Ragent V3"
-    print "-"*54
-
 def ua(islem = None, arg = None):
-    if islem == None and arg == None:
-        rsayi = randint(0, 2)
-        rsis = ualist[stage[rsayi]]
-        rua = randint(0,len(rsis)-1)
-        return rsis[rua]
-    elif islem in stage:
-        if arg == None:
-            gsis = ualist[islem]
-            return gsis[randint(0, len(gsis)-1)]
-        else:
-            gsis = ualist[islem]
-            return gsis[arg]
-    elif islem == "ualist":
-        if arg == None:
-            print bold+green+"<< Windows Listesi >>"+endcolor
-            for i in range(0, len(winlist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, winlist[i])
-            print bold+green+"\n\n<< Linux Listesi >>"+endcolor
-            for i in range(0, len(linlist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, linlist[i])
-            print bold+green+"\n\n<< Macintosh Listesi >>"+endcolor
-            for i in range(0, len(maclist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, maclist[i])
-            print bold+green+"\n\n<< Android Listesi >>"+endcolor
-            for i in range(0, len(andlist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, andlist[i])
-            print bold+green+"\n\n<< Mobile Listesi >>"+endcolor
-            for i in range(0, len(moblist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, moblist[i])
-            print bold+green+"\n\n<< Tablet Listesi >>"+endcolor
-            for i in range(0, len(tablist)):
-                print bold+green+"ID:"+endcolor+" {}\t{}".format(i, tablist[i])
-        else:
-            if arg == "win":
-                print bold+green+"<< Windows Listesi >>"+endcolor
-                for i in range(0, len(winlist)):
-                    print bold+green+"ID:"+endcolor+" {}\t{}".format(i, winlist[i])
-            elif arg == "lin":
-                print bold+green+"<< Linux Listesi >>"+endcolor
-                for i in range(0, len(linlist)):
-                    print bold+green+"ID:"+endcolor+" {}\t{}".format(i, linlist[i])
-            elif arg == "mac":
-                print bold+green+"<< Macintosh Listesi >>"+endcolor
-                for i in range(0, len(maclist)):
-                    print bold+green+"ID:"+endcolor+" {}\t{}".format(i, maclist[i])
+    rsayi = randint(0, 2)
+    rsis = ualist[stage[rsayi]]
+    rua = randint(0,len(rsis)-1)
+    return rsis[rua]
